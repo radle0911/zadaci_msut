@@ -1659,9 +1659,6 @@ SystemCoreClock:
 	.ascii	"RESERVED6\000"
 .LASF48:
 	.ascii	"AHB1ENR\000"
-.LASF80:
-	.ascii	"/home/eldar/workspace/msut/STM32F407/eldar/zadaci_m"
-	.ascii	"sut/zadaci/ea_zad/lab1/prekidac\000"
 .LASF6:
 	.ascii	"__int32_t\000"
 .LASF34:
@@ -1682,6 +1679,9 @@ SystemCoreClock:
 	.ascii	"ITM_RxBuffer\000"
 .LASF41:
 	.ascii	"CFGR\000"
+.LASF80:
+	.ascii	"/home/eldar/workspace/msut/STM32F407/eldar/zadaci_m"
+	.ascii	"sut/zadaci/ea_zad/lab2\000"
 .LASF32:
 	.ascii	"CPACR\000"
 .LASF60:
