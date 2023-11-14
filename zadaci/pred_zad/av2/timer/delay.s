@@ -47,66 +47,66 @@ delay_ms:
 	orr	r3, r3, #64
 	.loc 1 7 0
 	movs	r6, #83
-	.loc 1 9 0
+	.loc 1 11 0
 	mov	r5, #1000
-	.loc 1 10 0
+	.loc 1 12 0
 	movs	r4, #132
 	.loc 1 6 0
 	str	r3, [r1, #64]
 	.loc 1 7 0
 	strh	r6, [r2, #40]	@ movhi
-	.loc 1 9 0
+	.loc 1 11 0
 	str	r5, [r2, #44]
-	.loc 1 10 0
-	strh	r4, [r2]	@ movhi
 	.loc 1 12 0
+	strh	r4, [r2]	@ movhi
+	.loc 1 14 0
 	ldrh	r3, [r2, #20]
 	uxth	r3, r3
 	orr	r3, r3, #1
 	strh	r3, [r2, #20]	@ movhi
-	.loc 1 13 0
+	.loc 1 16 0
 	ldrh	r3, [r2]
 	uxth	r3, r3
 	orr	r3, r3, #1
 	strh	r3, [r2]	@ movhi
-	.loc 1 17 0
+	.loc 1 21 0
 	mov	r1, r2
-	.loc 1 14 0
+	.loc 1 18 0
 	cbz	r0, .L5
 .L3:
-	.loc 1 17 0 discriminator 1
+	.loc 1 21 0 discriminator 1
 	ldrh	r3, [r2, #16]
 	lsls	r3, r3, #31
 	bpl	.L3
 .LVL1:
-	.loc 1 19 0
+	.loc 1 24 0
 	ldrh	r3, [r1, #16]
 	bic	r3, r3, #1
 	lsls	r3, r3, #16
 	lsrs	r3, r3, #16
-	.loc 1 14 0
+	.loc 1 18 0
 	subs	r0, r0, #1
 .LVL2:
-	.loc 1 19 0
+	.loc 1 24 0
 	strh	r3, [r1, #16]	@ movhi
-	.loc 1 14 0
+	.loc 1 18 0
 	bne	.L3
 .L5:
-	.loc 1 22 0
+	.loc 1 28 0
 	ldr	r1, .L12+4
-	.loc 1 23 0
+	.loc 1 29 0
 	ldr	r2, .L12
-	.loc 1 22 0
+	.loc 1 28 0
 	ldrh	r3, [r1]
 	bic	r3, r3, #1
 	lsls	r3, r3, #16
 	lsrs	r3, r3, #16
 	strh	r3, [r1]	@ movhi
-	.loc 1 23 0
+	.loc 1 29 0
 	ldr	r3, [r2, #64]
 	bic	r3, r3, #64
 	str	r3, [r2, #64]
-	.loc 1 24 0
+	.loc 1 30 0
 	pop	{r4, r5, r6}
 	.cfi_restore 6
 	.cfi_restore 5
@@ -128,88 +128,88 @@ delay_ms:
 	.type	delay_us, %function
 delay_us:
 .LFB111:
-	.loc 1 27 0
+	.loc 1 33 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 0, uses_anonymous_args = 0
 	@ link register save eliminated.
 .LVL3:
-	.loc 1 29 0
+	.loc 1 35 0
 	ldr	r1, .L24
-	.loc 1 30 0
+	.loc 1 36 0
 	ldr	r2, .L24+4
-	.loc 1 29 0
+	.loc 1 35 0
 	ldr	r3, [r1, #64]
-	.loc 1 27 0
+	.loc 1 33 0
 	push	{r4, r5, r6}
 	.cfi_def_cfa_offset 12
 	.cfi_offset 4, -12
 	.cfi_offset 5, -8
 	.cfi_offset 6, -4
-	.loc 1 29 0
+	.loc 1 35 0
 	orr	r3, r3, #64
-	.loc 1 30 0
-	movs	r6, #0
-	.loc 1 32 0
-	movs	r5, #84
-	.loc 1 33 0
-	movs	r4, #132
-	.loc 1 29 0
-	str	r3, [r1, #64]
-	.loc 1 30 0
-	strh	r6, [r2, #40]	@ movhi
-	.loc 1 32 0
-	str	r5, [r2, #44]
-	.loc 1 33 0
-	strh	r4, [r2]	@ movhi
 	.loc 1 36 0
+	movs	r6, #0
+	.loc 1 38 0
+	movs	r5, #83
+	.loc 1 41 0
+	movs	r4, #132
+	.loc 1 35 0
+	str	r3, [r1, #64]
+	.loc 1 36 0
+	strh	r6, [r2, #40]	@ movhi
+	.loc 1 38 0
+	str	r5, [r2, #44]
+	.loc 1 41 0
+	strh	r4, [r2]	@ movhi
+	.loc 1 44 0
 	ldrh	r3, [r2, #20]
 	uxth	r3, r3
 	orr	r3, r3, #1
 	strh	r3, [r2, #20]	@ movhi
-	.loc 1 37 0
+	.loc 1 45 0
 	ldrh	r3, [r2]
 	uxth	r3, r3
 	orr	r3, r3, #1
 	strh	r3, [r2]	@ movhi
-	.loc 1 41 0
+	.loc 1 49 0
 	mov	r1, r2
-	.loc 1 38 0
+	.loc 1 46 0
 	cbz	r0, .L18
 .L16:
-	.loc 1 41 0 discriminator 1
+	.loc 1 49 0 discriminator 1
 	ldrh	r3, [r2, #16]
 	lsls	r3, r3, #31
 	bpl	.L16
 .LVL4:
-	.loc 1 43 0
+	.loc 1 51 0
 	ldrh	r3, [r1, #16]
 	bic	r3, r3, #1
 	lsls	r3, r3, #16
 	lsrs	r3, r3, #16
-	.loc 1 38 0
+	.loc 1 46 0
 	subs	r0, r0, #1
 .LVL5:
-	.loc 1 43 0
+	.loc 1 51 0
 	strh	r3, [r1, #16]	@ movhi
-	.loc 1 38 0
+	.loc 1 46 0
 	bne	.L16
 .L18:
-	.loc 1 46 0
+	.loc 1 54 0
 	ldr	r1, .L24+4
-	.loc 1 47 0
+	.loc 1 55 0
 	ldr	r2, .L24
-	.loc 1 46 0
+	.loc 1 54 0
 	ldrh	r3, [r1]
 	bic	r3, r3, #1
 	lsls	r3, r3, #16
 	lsrs	r3, r3, #16
 	strh	r3, [r1]	@ movhi
-	.loc 1 47 0
+	.loc 1 55 0
 	ldr	r3, [r2, #64]
 	bic	r3, r3, #64
 	str	r3, [r2, #64]
-	.loc 1 48 0
+	.loc 1 56 0
 	pop	{r4, r5, r6}
 	.cfi_restore 6
 	.cfi_restore 5
@@ -777,7 +777,7 @@ delay_us:
 	.uleb128 0xc
 	.4byte	.LASF67
 	.byte	0x1
-	.byte	0x1a
+	.byte	0x20
 	.4byte	.LFB111
 	.4byte	.LFE111-.LFB111
 	.uleb128 0x1
@@ -786,7 +786,7 @@ delay_us:
 	.uleb128 0xd
 	.ascii	"us\000"
 	.byte	0x1
-	.byte	0x1a
+	.byte	0x20
 	.4byte	0xb8
 	.4byte	.LLST1
 	.byte	0
@@ -1083,9 +1083,6 @@ delay_us:
 	.ascii	"uint8_t\000"
 .LASF31:
 	.ascii	"APB1ENR\000"
-.LASF70:
-	.ascii	"/home/eldar/workspace/msut/STM32F407/eldar/pred_zad"
-	.ascii	"/av2/timer\000"
 .LASF69:
 	.ascii	"delay.c\000"
 .LASF29:
@@ -1186,6 +1183,9 @@ delay_us:
 	.ascii	"AHB1RSTR\000"
 .LASF22:
 	.ascii	"AHB3RSTR\000"
+.LASF70:
+	.ascii	"/home/eldar/workspace/msut/STM32F407/eldar/zadaci_m"
+	.ascii	"sut/zadaci/pred_zad/av2/timer\000"
 .LASF71:
 	.ascii	"ITM_RxBuffer\000"
 .LASF39:

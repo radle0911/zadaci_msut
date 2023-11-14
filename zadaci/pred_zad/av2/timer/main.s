@@ -867,6 +867,9 @@ main:
 	.ascii	"APB1RSTR\000"
 .LASF36:
 	.ascii	"AHB2ENR\000"
+.LASF57:
+	.ascii	"/home/eldar/workspace/msut/STM32F407/eldar/zadaci_m"
+	.ascii	"sut/zadaci/pred_zad/av2/timer\000"
 .LASF2:
 	.ascii	"short int\000"
 .LASF17:
@@ -898,9 +901,6 @@ main:
 	.ascii	"RESERVED4\000"
 .LASF39:
 	.ascii	"APB1ENR\000"
-.LASF57:
-	.ascii	"/home/eldar/workspace/msut/STM32F407/eldar/pred_zad"
-	.ascii	"/av2/timer\000"
 .LASF19:
 	.ascii	"OTYPER\000"
 .LASF37:
