@@ -324,10 +324,10 @@ SystemCoreClock:
 	.word	168000000
 	.text
 .Letext0:
-	.file 2 "/home/adnan/STM32F407/gcc-arm-none-eabi/arm-none-eabi/include/machine/_default_types.h"
-	.file 3 "/home/adnan/STM32F407/gcc-arm-none-eabi/arm-none-eabi/include/stdint.h"
-	.file 4 "../../../../STM32F407/Libraries/CMSIS/Include/core_cm4.h"
-	.file 5 "../../../../STM32F407/Libraries/CMSIS/ST/STM32F4xx/Include/stm32f4xx.h"
+	.file 2 "/home/eldar/workspace/msut/STM32F407/gcc-arm-none-eabi/arm-none-eabi/include/machine/_default_types.h"
+	.file 3 "/home/eldar/workspace/msut/STM32F407/gcc-arm-none-eabi/arm-none-eabi/include/stdint.h"
+	.file 4 "/home/eldar/workspace/msut/STM32F407/Libraries/CMSIS/Include/core_cm4.h"
+	.file 5 "/home/eldar/workspace/msut/STM32F407/Libraries/CMSIS/ST/STM32F4xx/Include/stm32f4xx.h"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
 	.4byte	0x5b3
@@ -1571,8 +1571,6 @@ SystemCoreClock:
 	.ascii	"OPTKEYR\000"
 .LASF10:
 	.ascii	"long long int\000"
-.LASF80:
-	.ascii	"/home/adnan/fet/mcu-stm32/P2/usart\000"
 .LASF27:
 	.ascii	"BFAR\000"
 .LASF7:
@@ -1681,6 +1679,9 @@ SystemCoreClock:
 	.ascii	"ITM_RxBuffer\000"
 .LASF41:
 	.ascii	"CFGR\000"
+.LASF80:
+	.ascii	"/home/eldar/workspace/msut/STM32F407/eldar/zadaci_m"
+	.ascii	"sut/zadaci/ea_zad/lab2\000"
 .LASF32:
 	.ascii	"CPACR\000"
 .LASF60:

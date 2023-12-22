@@ -26,170 +26,132 @@
 main:
 .LFB110:
 	.file 1 "main.c"
-	.loc 1 7 0
+	.loc 1 5 0
 	.cfi_startproc
-	@ args = 0, pretend = 0, frame = 24
+	@ args = 0, pretend = 0, frame = 16
 	@ frame_needed = 0, uses_anonymous_args = 0
-	push	{r4, r5, r6, r7, lr}
-	.cfi_def_cfa_offset 20
-	.cfi_offset 4, -20
-	.cfi_offset 5, -16
-	.cfi_offset 6, -12
-	.cfi_offset 7, -8
-	.cfi_offset 14, -4
-	.loc 1 14 0
-	ldr	lr, .L12+12
-	.loc 1 9 0
-	ldr	r3, .L12
-	.loc 1 14 0
-	ldr	r7, [lr, #48]
-	.loc 1 9 0
+	.loc 1 8 0
+	ldr	r1, .L8
+	.loc 1 17 0
+	ldr	r3, .L8+4
+	.loc 1 8 0
+	ldr	r2, [r1, #48]
+	.loc 1 17 0
 	ldr	r0, [r3]	@ unaligned
+	.loc 1 5 0
+	push	{r4, r5, r6, lr}
+	.cfi_def_cfa_offset 16
+	.cfi_offset 4, -16
+	.cfi_offset 5, -12
+	.cfi_offset 6, -8
+	.cfi_offset 14, -4
+	.loc 1 8 0
+	orr	r2, r2, #8
+	.loc 1 9 0
+	ldr	r5, .L8+8
+	.loc 1 8 0
+	str	r2, [r1, #48]
+	.loc 1 9 0
+	ldr	r4, [r5]
+	.loc 1 17 0
 	ldr	r1, [r3, #4]	@ unaligned
 	ldr	r2, [r3, #8]	@ unaligned
 	ldr	r3, [r3, #12]	@ unaligned
-	.loc 1 15 0
-	ldr	r5, .L12+4
-.LBB4:
-.LBB5:
-	.loc 1 40 0
-	ldr	r6, .L12+8
-.LBE5:
-.LBE4:
-	.loc 1 7 0
-	sub	sp, sp, #28
-	.cfi_def_cfa_offset 48
-	.loc 1 14 0
-	orr	r7, r7, #8
 	.loc 1 9 0
-	add	r4, sp, #8
-	stmia	r4!, {r0, r1, r2, r3}
-	.loc 1 14 0
-	str	r7, [lr, #48]
-	.loc 1 15 0
-	ldr	r3, [r5]
-	orr	r3, r3, #1426063360
-	str	r3, [r5]
-	.loc 1 16 0
-	ldr	r3, [r5, #4]
-	str	r3, [r5, #4]
+	orr	r4, r4, #1426063360
+	str	r4, [r5]
+	.loc 1 10 0
+	ldr	r4, [r5, #4]
+	str	r4, [r5, #4]
+	.loc 1 11 0
+	ldr	r6, [r5, #8]
+	.loc 1 5 0
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 32
 	.loc 1 17 0
-	ldr	r3, [r5, #8]
-	orr	r3, r3, #-16777216
-	str	r3, [r5, #8]
-	.loc 1 20 0
-	mov	r0, #364
-	bl	initUSART2
+	mov	r4, sp
+	.loc 1 11 0
+	orr	r6, r6, #-16777216
+	str	r6, [r5, #8]
 .LVL0:
-	movs	r7, #0
-	.loc 1 22 0
-	mov	r4, r7
+	.loc 1 17 0
+	stmia	r4!, {r0, r1, r2, r3}
+	.loc 1 16 0
+	movs	r4, #0
 .LVL1:
 .L2:
+	.loc 1 21 0
+	add	r3, sp, #16
+	add	r3, r3, r4, lsl #1
 	.loc 1 26 0
-	ldr	r3, [r5, #20]
-	.loc 1 27 0
-	add	r2, sp, #24
-	.loc 1 26 0
-	ubfx	r3, r3, #0, #12
-	.loc 1 27 0
-	add	r2, r2, r4, lsl #1
-	.loc 1 26 0
-	str	r3, [r5, #20]
-	.loc 1 27 0
-	ldr	r3, [r5, #20]
-	ldrh	r2, [r2, #-16]
-	orrs	r3, r3, r2
-	str	r3, [r5, #20]
-	.loc 1 28 0
-	uxtb	r0, r7
-	bl	putcharUSART2
-.LVL2:
-.LBB7:
-.LBB6:
-	.loc 1 40 0
-	str	r6, [sp, #4]
-	.loc 1 42 0
-	ldr	r3, [sp, #4]
-	cbz	r3, .L6
-.L8:
-	.loc 1 44 0
-	ldr	r3, [sp, #4]
-	subs	r3, r3, #1
-	str	r3, [sp, #4]
-	.loc 1 42 0
-	ldr	r3, [sp, #4]
-	cmp	r3, #0
-	bne	.L8
-.L6:
-.LVL3:
-.LBE6:
-.LBE7:
-	.loc 1 32 0
 	adds	r4, r4, #1
-.LVL4:
+.LVL2:
+	.loc 1 21 0
+	ldrh	r3, [r3, #-16]
+	str	r3, [r5, #20]
+	.loc 1 26 0
 	uxtb	r4, r4
-.LVL5:
-	.loc 1 34 0
+	.loc 1 22 0
+	mov	r0, #500
+	bl	delay_ms
+.LVL3:
+	.loc 1 29 0
 	cmp	r4, #8
 	it	eq
 	moveq	r4, #0
-.LVL6:
-	adds	r7, r7, #1
-.LVL7:
+.LVL4:
 	b	.L2
-.L13:
+.L9:
 	.align	2
-.L12:
+.L8:
+	.word	1073887232
 	.word	.LANCHOR0
 	.word	1073875968
-	.word	1050000
-	.word	1073887232
 	.cfi_endproc
 .LFE110:
 	.size	main, .-main
 	.text
 	.align	2
-	.global	delay_soft_ms
+	.global	del
 	.thumb
 	.thumb_func
-	.type	delay_soft_ms, %function
-delay_soft_ms:
+	.type	del, %function
+del:
 .LFB111:
-	.loc 1 39 0
+	.loc 1 35 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 8
 	@ frame_needed = 0, uses_anonymous_args = 0
 	@ link register save eliminated.
-.LVL8:
+.LVL5:
 	sub	sp, sp, #8
 	.cfi_def_cfa_offset 8
-	.loc 1 40 0
+	.loc 1 36 0
 	movw	r3, #10500
 	mul	r0, r3, r0
-.LVL9:
+.LVL6:
 	str	r0, [sp, #4]
-	.loc 1 42 0
+	.loc 1 37 0
 	ldr	r3, [sp, #4]
-	cbz	r3, .L14
-.L17:
-	.loc 1 44 0
+	cbz	r3, .L10
+.L13:
+	.loc 1 38 0
 	ldr	r3, [sp, #4]
 	subs	r3, r3, #1
 	str	r3, [sp, #4]
-	.loc 1 42 0
+	.loc 1 37 0
 	ldr	r3, [sp, #4]
 	cmp	r3, #0
-	bne	.L17
-.L14:
-	.loc 1 48 0
+	bne	.L13
+.L10:
+	.loc 1 39 0
 	add	sp, sp, #8
 	.cfi_def_cfa_offset 0
 	@ sp needed
 	bx	lr
 	.cfi_endproc
 .LFE111:
-	.size	delay_soft_ms, .-delay_soft_ms
+	.size	del, .-del
 	.section	.rodata
 	.align	2
 	.set	.LANCHOR0,. + 0
@@ -204,23 +166,23 @@ delay_soft_ms:
 	.short	28672
 	.text
 .Letext0:
-	.file 2 "/home/adnan/STM32F407/gcc-arm-none-eabi/arm-none-eabi/include/machine/_default_types.h"
-	.file 3 "/home/adnan/STM32F407/gcc-arm-none-eabi/arm-none-eabi/include/stdint.h"
-	.file 4 "../../../../STM32F407/Libraries/CMSIS/ST/STM32F4xx/Include/stm32f4xx.h"
-	.file 5 "usart.h"
-	.file 6 "../../../../STM32F407/Libraries/CMSIS/Include/core_cm4.h"
+	.file 2 "/home/eldar/workspace/msut/STM32F407/gcc-arm-none-eabi/arm-none-eabi/include/machine/_default_types.h"
+	.file 3 "/home/eldar/workspace/msut/STM32F407/gcc-arm-none-eabi/arm-none-eabi/include/stdint.h"
+	.file 4 "/home/eldar/workspace/msut/STM32F407/Libraries/CMSIS/ST/STM32F4xx/Include/stm32f4xx.h"
+	.file 5 "/home/eldar/workspace/msut/STM32F407/Libraries/CMSIS/Include/core_cm4.h"
+	.file 6 "delay.h"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
-	.4byte	0x42f
+	.4byte	0x3cf
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
 	.uleb128 0x1
-	.4byte	.LASF57
+	.4byte	.LASF56
 	.byte	0x1
+	.4byte	.LASF57
 	.4byte	.LASF58
-	.4byte	.LASF59
-	.4byte	.Ldebug_ranges0+0x18
+	.4byte	.Ldebug_ranges0+0
 	.4byte	0
 	.4byte	.Ldebug_line0
 	.uleb128 0x2
@@ -587,133 +549,88 @@ delay_soft_ms:
 	.uleb128 0xc
 	.4byte	.LASF55
 	.byte	0x1
-	.byte	0x26
-	.byte	0x1
-	.4byte	0x344
-	.uleb128 0xd
-	.ascii	"cnt\000"
-	.byte	0x1
-	.byte	0x26
-	.4byte	0xb8
-	.uleb128 0xe
-	.4byte	.LASF60
-	.byte	0x1
-	.byte	0x28
-	.4byte	0xca
-	.byte	0
-	.uleb128 0xf
-	.4byte	.LASF61
-	.byte	0x1
-	.byte	0x6
+	.byte	0x5
 	.4byte	0x89
 	.4byte	.LFB110
 	.4byte	.LFE110-.LFB110
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x3d3
-	.uleb128 0x10
+	.4byte	0x378
+	.uleb128 0xd
+	.ascii	"del\000"
+	.byte	0x1
+	.byte	0xe
+	.4byte	0x34b
+	.uleb128 0xe
+	.4byte	0xb8
+	.byte	0
+	.uleb128 0xf
 	.ascii	"k\000"
 	.byte	0x1
-	.byte	0x8
+	.byte	0x10
 	.4byte	0x97
 	.4byte	.LLST0
 	.uleb128 0x10
-	.ascii	"n\000"
-	.byte	0x1
-	.byte	0x8
-	.4byte	0x97
-	.4byte	.LLST1
-	.uleb128 0x11
 	.4byte	.LASF54
 	.byte	0x1
-	.byte	0x9
-	.4byte	0x3d3
+	.byte	0x11
+	.4byte	0x378
 	.uleb128 0x2
 	.byte	0x91
-	.sleb128 -40
+	.sleb128 -32
+	.uleb128 0x11
+	.4byte	.LVL3
+	.4byte	0x3c5
 	.uleb128 0x12
-	.4byte	0x321
-	.4byte	.LBB4
-	.4byte	.Ldebug_ranges0+0
-	.byte	0x1
-	.byte	0x1d
-	.4byte	0x3ad
-	.uleb128 0x13
-	.4byte	0x32d
-	.byte	0x64
-	.uleb128 0x14
-	.4byte	.Ldebug_ranges0+0
-	.uleb128 0x15
-	.4byte	0x338
-	.uleb128 0x2
-	.byte	0x91
-	.sleb128 -44
-	.byte	0
-	.byte	0
-	.uleb128 0x16
-	.4byte	.LVL0
-	.4byte	0x414
-	.4byte	0x3c2
-	.uleb128 0x17
 	.uleb128 0x1
 	.byte	0x50
 	.uleb128 0x3
 	.byte	0xa
-	.2byte	0x16c
-	.byte	0
-	.uleb128 0x18
-	.4byte	.LVL2
-	.4byte	0x425
-	.uleb128 0x17
-	.uleb128 0x1
-	.byte	0x50
-	.uleb128 0x2
-	.byte	0x77
-	.sleb128 0
+	.2byte	0x1f4
 	.byte	0
 	.byte	0
 	.uleb128 0x6
 	.4byte	0xa2
-	.4byte	0x3e3
+	.4byte	0x388
 	.uleb128 0x7
 	.4byte	0xc3
 	.byte	0x7
 	.byte	0
-	.uleb128 0x19
-	.4byte	0x321
+	.uleb128 0x13
+	.ascii	"del\000"
+	.byte	0x1
+	.byte	0x23
 	.4byte	.LFB111
 	.4byte	.LFE111-.LFB111
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x408
-	.uleb128 0x1a
-	.4byte	0x32d
-	.4byte	.LLST2
+	.4byte	0x3b9
+	.uleb128 0x14
+	.ascii	"ms\000"
+	.byte	0x1
+	.byte	0x23
+	.4byte	0xb8
+	.4byte	.LLST1
 	.uleb128 0x15
-	.4byte	0x338
+	.ascii	"us\000"
+	.byte	0x1
+	.byte	0x24
+	.4byte	0xca
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -4
 	.byte	0
-	.uleb128 0x1b
-	.4byte	.LASF62
-	.byte	0x6
+	.uleb128 0x16
+	.4byte	.LASF59
+	.byte	0x5
 	.2byte	0x51b
 	.4byte	0xe4
-	.uleb128 0x1c
-	.4byte	.LASF56
-	.byte	0x5
-	.byte	0x9
-	.4byte	0x425
-	.uleb128 0x1d
+	.uleb128 0x17
+	.4byte	.LASF60
+	.byte	0x6
+	.byte	0x6
+	.uleb128 0xe
 	.4byte	0xb8
-	.byte	0
-	.uleb128 0x1e
-	.4byte	.LASF63
-	.byte	0x5
-	.byte	0xa
-	.uleb128 0x1d
-	.4byte	0x97
 	.byte	0
 	.byte	0
 	.section	.debug_abbrev,"",%progbits
@@ -864,53 +781,6 @@ delay_soft_ms:
 	.uleb128 0xb
 	.uleb128 0x3b
 	.uleb128 0xb
-	.uleb128 0x27
-	.uleb128 0x19
-	.uleb128 0x20
-	.uleb128 0xb
-	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0xd
-	.uleb128 0x5
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0x8
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0xe
-	.uleb128 0x34
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0xf
-	.uleb128 0x2e
-	.byte	0x1
-	.uleb128 0x3f
-	.uleb128 0x19
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x27
-	.uleb128 0x19
 	.uleb128 0x49
 	.uleb128 0x13
 	.uleb128 0x11
@@ -925,7 +795,33 @@ delay_soft_ms:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x10
+	.uleb128 0xd
+	.uleb128 0x2e
+	.byte	0x1
+	.uleb128 0x3f
+	.uleb128 0x19
+	.uleb128 0x3
+	.uleb128 0x8
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0xb
+	.uleb128 0x27
+	.uleb128 0x19
+	.uleb128 0x3c
+	.uleb128 0x19
+	.uleb128 0x1
+	.uleb128 0x13
+	.byte	0
+	.byte	0
+	.uleb128 0xe
+	.uleb128 0x5
+	.byte	0
+	.uleb128 0x49
+	.uleb128 0x13
+	.byte	0
+	.byte	0
+	.uleb128 0xf
 	.uleb128 0x34
 	.byte	0
 	.uleb128 0x3
@@ -940,7 +836,7 @@ delay_soft_ms:
 	.uleb128 0x17
 	.byte	0
 	.byte	0
-	.uleb128 0x11
+	.uleb128 0x10
 	.uleb128 0x34
 	.byte	0
 	.uleb128 0x3
@@ -955,60 +851,16 @@ delay_soft_ms:
 	.uleb128 0x18
 	.byte	0
 	.byte	0
-	.uleb128 0x12
-	.uleb128 0x1d
-	.byte	0x1
-	.uleb128 0x31
-	.uleb128 0x13
-	.uleb128 0x52
-	.uleb128 0x1
-	.uleb128 0x55
-	.uleb128 0x17
-	.uleb128 0x58
-	.uleb128 0xb
-	.uleb128 0x59
-	.uleb128 0xb
-	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x13
-	.uleb128 0x5
-	.byte	0
-	.uleb128 0x31
-	.uleb128 0x13
-	.uleb128 0x1c
-	.uleb128 0xb
-	.byte	0
-	.byte	0
-	.uleb128 0x14
-	.uleb128 0xb
-	.byte	0x1
-	.uleb128 0x55
-	.uleb128 0x17
-	.byte	0
-	.byte	0
-	.uleb128 0x15
-	.uleb128 0x34
-	.byte	0
-	.uleb128 0x31
-	.uleb128 0x13
-	.uleb128 0x2
-	.uleb128 0x18
-	.byte	0
-	.byte	0
-	.uleb128 0x16
+	.uleb128 0x11
 	.uleb128 0x4109
 	.byte	0x1
 	.uleb128 0x11
 	.uleb128 0x1
 	.uleb128 0x31
 	.uleb128 0x13
-	.uleb128 0x1
-	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x17
+	.uleb128 0x12
 	.uleb128 0x410a
 	.byte	0
 	.uleb128 0x2
@@ -1017,20 +869,19 @@ delay_soft_ms:
 	.uleb128 0x18
 	.byte	0
 	.byte	0
-	.uleb128 0x18
-	.uleb128 0x4109
-	.byte	0x1
-	.uleb128 0x11
-	.uleb128 0x1
-	.uleb128 0x31
 	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x19
 	.uleb128 0x2e
 	.byte	0x1
-	.uleb128 0x31
-	.uleb128 0x13
+	.uleb128 0x3f
+	.uleb128 0x19
+	.uleb128 0x3
+	.uleb128 0x8
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0xb
+	.uleb128 0x27
+	.uleb128 0x19
 	.uleb128 0x11
 	.uleb128 0x1
 	.uleb128 0x12
@@ -1043,16 +894,37 @@ delay_soft_ms:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x1a
+	.uleb128 0x14
 	.uleb128 0x5
 	.byte	0
-	.uleb128 0x31
+	.uleb128 0x3
+	.uleb128 0x8
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0xb
+	.uleb128 0x49
 	.uleb128 0x13
 	.uleb128 0x2
 	.uleb128 0x17
 	.byte	0
 	.byte	0
-	.uleb128 0x1b
+	.uleb128 0x15
+	.uleb128 0x34
+	.byte	0
+	.uleb128 0x3
+	.uleb128 0x8
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0xb
+	.uleb128 0x49
+	.uleb128 0x13
+	.uleb128 0x2
+	.uleb128 0x18
+	.byte	0
+	.byte	0
+	.uleb128 0x16
 	.uleb128 0x34
 	.byte	0
 	.uleb128 0x3
@@ -1069,33 +941,7 @@ delay_soft_ms:
 	.uleb128 0x19
 	.byte	0
 	.byte	0
-	.uleb128 0x1c
-	.uleb128 0x2e
-	.byte	0x1
-	.uleb128 0x3f
-	.uleb128 0x19
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x27
-	.uleb128 0x19
-	.uleb128 0x3c
-	.uleb128 0x19
-	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x1d
-	.uleb128 0x5
-	.byte	0
-	.uleb128 0x49
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x1e
+	.uleb128 0x17
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
@@ -1122,39 +968,21 @@ delay_soft_ms:
 	.byte	0x30
 	.byte	0x9f
 	.4byte	.LVL1
-	.4byte	.LVL4
+	.4byte	.LVL2
 	.2byte	0x1
 	.byte	0x54
-	.4byte	.LVL5
-	.4byte	.LVL6
+	.4byte	.LVL3
+	.4byte	.LVL4
 	.2byte	0x1
 	.byte	0x54
 	.4byte	0
 	.4byte	0
 .LLST1:
-	.4byte	.LVL0
-	.4byte	.LVL1
-	.2byte	0x2
-	.byte	0x30
-	.byte	0x9f
-	.4byte	.LVL1
-	.4byte	.LVL3
-	.2byte	0x1
-	.byte	0x57
-	.4byte	.LVL3
-	.4byte	.LVL7
-	.2byte	0x3
-	.byte	0x77
-	.sleb128 1
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST2:
-	.4byte	.LVL8
-	.4byte	.LVL9
+	.4byte	.LVL5
+	.4byte	.LVL6
 	.2byte	0x1
 	.byte	0x50
-	.4byte	.LVL9
+	.4byte	.LVL6
 	.4byte	.LFE111
 	.2byte	0x4
 	.byte	0xf3
@@ -1179,12 +1007,6 @@ delay_soft_ms:
 	.4byte	0
 	.section	.debug_ranges,"",%progbits
 .Ldebug_ranges0:
-	.4byte	.LBB4
-	.4byte	.LBE4
-	.4byte	.LBB7
-	.4byte	.LBE7
-	.4byte	0
-	.4byte	0
 	.4byte	.Ltext0
 	.4byte	.Letext0
 	.4byte	.LFB110
@@ -1196,23 +1018,21 @@ delay_soft_ms:
 	.section	.debug_str,"MS",%progbits,1
 .LASF42:
 	.ascii	"AHB1LPENR\000"
-.LASF54:
-	.ascii	"states\000"
+.LASF60:
+	.ascii	"delay_ms\000"
 .LASF32:
 	.ascii	"APB1RSTR\000"
 .LASF36:
 	.ascii	"AHB2ENR\000"
 .LASF2:
 	.ascii	"short int\000"
-.LASF55:
-	.ascii	"delay_soft_ms\000"
 .LASF17:
 	.ascii	"sizetype\000"
 .LASF49:
 	.ascii	"BDCR\000"
 .LASF52:
 	.ascii	"PLLI2SCFGR\000"
-.LASF61:
+.LASF55:
 	.ascii	"main\000"
 .LASF8:
 	.ascii	"__uint32_t\000"
@@ -1222,7 +1042,7 @@ delay_soft_ms:
 	.ascii	"SSCGR\000"
 .LASF44:
 	.ascii	"AHB3LPENR\000"
-.LASF57:
+.LASF56:
 	.ascii	"GNU C 4.9.3 20141119 (release) [ARM/embedded-4_9-br"
 	.ascii	"anch revision 218278] -mlittle-endian -mthumb -mcpu"
 	.ascii	"=cortex-m4 -mthumb-interwork -mfloat-abi=hard -mfpu"
@@ -1237,6 +1057,8 @@ delay_soft_ms:
 	.ascii	"APB1ENR\000"
 .LASF19:
 	.ascii	"OTYPER\000"
+.LASF54:
+	.ascii	"stanja\000"
 .LASF37:
 	.ascii	"AHB3ENR\000"
 .LASF10:
@@ -1245,22 +1067,16 @@ delay_soft_ms:
 	.ascii	"PUPDR\000"
 .LASF7:
 	.ascii	"long int\000"
-.LASF56:
-	.ascii	"initUSART2\000"
 .LASF53:
 	.ascii	"RCC_TypeDef\000"
 .LASF23:
 	.ascii	"BSRRH\000"
-.LASF59:
-	.ascii	"/home/adnan/fet/mcu-stm32/P2/usart\000"
 .LASF18:
 	.ascii	"MODER\000"
 .LASF33:
 	.ascii	"APB2RSTR\000"
 .LASF3:
 	.ascii	"__uint8_t\000"
-.LASF63:
-	.ascii	"putcharUSART2\000"
 .LASF22:
 	.ascii	"BSRRL\000"
 .LASF1:
@@ -1283,8 +1099,6 @@ delay_soft_ms:
 	.ascii	"long unsigned int\000"
 .LASF27:
 	.ascii	"CFGR\000"
-.LASF60:
-	.ascii	"time\000"
 .LASF26:
 	.ascii	"PLLCFGR\000"
 .LASF5:
@@ -1303,7 +1117,7 @@ delay_soft_ms:
 	.ascii	"RESERVED2\000"
 .LASF20:
 	.ascii	"OSPEEDR\000"
-.LASF58:
+.LASF57:
 	.ascii	"main.c\000"
 .LASF48:
 	.ascii	"RESERVED5\000"
@@ -1317,9 +1131,12 @@ delay_soft_ms:
 	.ascii	"AHB1RSTR\000"
 .LASF25:
 	.ascii	"GPIO_TypeDef\000"
+.LASF58:
+	.ascii	"/home/eldar/workspace/msut/STM32F407/eldar/zadaci_m"
+	.ascii	"sut/zadaci/ea_zad/lab2\000"
 .LASF30:
 	.ascii	"AHB3RSTR\000"
-.LASF62:
+.LASF59:
 	.ascii	"ITM_RxBuffer\000"
 .LASF24:
 	.ascii	"LCKR\000"
